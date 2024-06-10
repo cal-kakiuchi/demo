@@ -14,7 +14,7 @@
     -- `cd frontend`  
   フォルダ内で実行  
     -- `docker compose exec frontend bash`  
-  #ドッカー内で起動  
+  ドッカー内で起動  
     -- `npm run dev`  
 
 # ブラウザからアクセス

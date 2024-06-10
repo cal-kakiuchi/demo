@@ -1,0 +1,28 @@
+{
+    "name": "atd_04_aqualink_customer_management_api",
+    "workspaceFolder": "/root/app",
+    "dockerComposeFile": [
+      "../compose.yml"
+    ],
+    "service": "app",
+    "customizations": {
+      "vscode": {
+        "settings": {
+          "python.defaultInterpreterPath": ".venv/bin/python3.9",
+          "python.autoComplete.extraPaths": [
+            ".venv/lib/python3.9/site-packages"
+          ]
+        },
+        "extensions": [
+          "editorconfig.editorconfig",
+          "eamodio.gitlens",
+          "ms-python.python@2024.0.1",
+          "ms-python.black-formatter@2023.6.0",
+          "ms-python.isort@2023.10.1",
+          "ms-python.flake8@2023.10.0",
+          // "ms-python.mypy-type-checker",
+          "yzhang.markdown-all-in-one"
+        ]
+      }
+    }
+  }

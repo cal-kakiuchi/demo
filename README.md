@@ -1,24 +1,27 @@
 # 仕様技術
- -- Nuxt3.0(TypeScript)  
- -- FastAPI(python)  
- -- MYSQL  
+ -- Nuxt3.0(TypeScript)
+ -- FastAPI(python)
+ -- MYSQL
 
-# init  
- -- `docker compose build --no-cache`  
- -- `docker compose up -d`  
- (ドッカーが起動します）
-   
+# init
+ ``` bash
+  #ビルド
+    docker compose build --no-cache
 
- # Nuxt起動  
-  フロントエンドフォルダに移動  
-    -- `cd frontend`  
-  フォルダ内で実行  
-    -- `docker compose exec frontend bash`  
-  ドッカー内で起動  
-    -- `npm run dev`  
+  #ドッカー起動
+    docker compose up -d
+ ```
+
+ # Nuxt起動
+  ``` bash
+  #フロントエンドフォルダに移動
+    cd ../demo/frontend
+  #フロントエンドフォルダ内で実行
+    docker compose run frontend npm run dev
+  ```
 
 # ブラウザからアクセス
- *フロントエンド*  
-  https://localhost:3000  
- *バックエンド*  
-  https://localhost:8000  
+ *フロントエンド*
+  https://localhost:3000
+ *バックエンド*
+  https://localhost:8000

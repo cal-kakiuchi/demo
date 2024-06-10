@@ -14,10 +14,12 @@ services:
     container_name: backend
     build: ./backend
     volumes:
-    - .dockervenv:/src/.venv
+    - ./backend/dockervenv:/src/.venv
     - ./backend:/src
     ports:
-    - "8000:8000"
+    - "8131:8131"
+    tty: true
+    init: true
     depends_on:
     - db
     environment:

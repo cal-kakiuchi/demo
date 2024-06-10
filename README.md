@@ -6,9 +6,14 @@
 # init  
  -- docker compose build --no-cache  
  -- docker compose up -d  
+ (ドッカーが起動します）
+   
 
  # Nuxt起動  
-  -- docker compose exec frontend bash  
+  フロントエンドフォルダに移動
+    -- cd frontend
+  フォルダ内で実行
+    -- docker compose exec frontend bash  
   #ドッカー内で起動  
     -- npm run dev  
 

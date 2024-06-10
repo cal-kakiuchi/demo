@@ -1,8 +1,13 @@
+# 仕様技術
+ -- Nuxt3.0(TypeScript)  
+ -- FastAPI(python)  
+ -- MYSQL  
+
 # init  
  -- docker compose build --no-cache  
  -- docker compose up -d  
 
- ## フロントエンド起動  
+ # Nuxt起動  
   -- docker compose exec frontend bash  
   #ドッカー内で起動  
     -- npm run dev  

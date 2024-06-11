@@ -17,13 +17,13 @@ services:
     - ./backend/dockervenv:/src/.venv
     - ./backend:/src
     ports:
-    - "8131:8131"
-    tty: true
-    init: true
-    depends_on:
-    - db
-    environment:
-      DATABASE_URL: "mysql://root:your_password@db/kintai_db"
+    - "8000:8000"
+    # tty: true
+    # init: true
+    # depends_on:
+    # - db
+    # environment:
+    #   DATABASE_URL: "mysql://root:your_password@db/kintai_db"
 
   frontend:
     container_name: frontend

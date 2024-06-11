@@ -1,12 +1,13 @@
 FROM python:3.8-slim
 
 # Poetryインストール
-RUN pip install poetry
+RUN pip install --upgrade pip && \
+    pip install poetry
 
 WORKDIR /src
 
 # Poetry関連ファイルをコピー
-COPY pyproject.toml poetry.lock ./
+COPY pyproject.toml* poetry.lock* ./
 
 RUN apt update && apt upgrade -y && \
     apt install --no-install-recommends -y tzdata && \
@@ -15,11 +16,9 @@ RUN apt update && apt upgrade -y && \
     apt clean
 
 # poetryでライブラリをインストール (pyproject.tomlが既にある場合)
-RUN pip install --upgrade pip && \
-    pip install poetry && \
-    poetry config virtualenvs.in-project true && \
+RUN poetry config virtualenvs.in-project true && \
     poetry config virtualenvs.create true && \
-    poetry install --no-root
+    if [ -f pyproject.toml ]; then poetry install --no-root; fi
 
 COPY . .
 

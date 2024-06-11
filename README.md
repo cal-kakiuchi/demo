@@ -2,7 +2,7 @@
  -- Nuxt3.0(TypeScript)  
  -- FastAPI(python)  
  -- MYSQL  
- -- DOCKER　*事前にDOCKERまたはRANCHERをインストールしておいてください  
+ -- DOCKER　*事前にDOCKERまたはRANCHERをインストールして起動
 
 # init
  ``` bash

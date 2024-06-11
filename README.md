@@ -6,7 +6,7 @@
 
 # init
  ``` bash
-  #poetry install(初回起動時のみ)
+  #python環境ビルド(初回起動時のみ)
   docker compose run --entrypoint "poetry install --no-root" backend
   #ドッカー起動
   docker compose up -d

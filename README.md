@@ -11,14 +11,6 @@
     docker compose up -d
  ```
   
- # Nuxt起動
-  ``` bash
-  # npm install
-    docker compose run frontend npm install  
-  # フロントエンドフォルダ内で実行  
-    docker compose run frontend npm run dev  
-  ```
-  
 # ブラウザからアクセス
  *フロントエンド*  
   https://localhost:3000  

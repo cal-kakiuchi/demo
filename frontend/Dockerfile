@@ -9,4 +9,5 @@ RUN apt update \
     git \
     vim
 RUN apt install -y nodejs npm
-RUN npm install n -g
+# RUN npx nuxi init .--force
+# RUN npm install n -g

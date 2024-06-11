@@ -18,12 +18,12 @@ services:
     - ./backend:/src
     ports:
     - "8000:8000"
-    # tty: true
-    # init: true
-    # depends_on:
-    # - db
-    # environment:
-    #   DATABASE_URL: "mysql://root:your_password@db/kintai_db"
+    tty: true
+    init: true
+    depends_on:
+    - db
+    environment:
+      DATABASE_URL: "mysql://root:your_password@db/kintai_db"
 
   frontend:
     container_name: frontend
@@ -39,6 +39,6 @@ services:
       HOST: 0.0.0.0
       port: 80
       CHOKIDAR_USEPOLLING: true
-    # command: sh -c "npm && npm run dev"
+    command: sh -c "yarn && yarn dev"
 volumes:
   nuxt_node_modules:

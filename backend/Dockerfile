@@ -17,9 +17,7 @@ RUN apt update && apt upgrade -y && \
 
 # poetryでライブラリをインストール (pyproject.tomlが既にある場合)
 RUN poetry config virtualenvs.in-project true && \
-    poetry config virtualenvs.create true && \
-    if [ -f pyproject.toml ]; then poetry install --no-root; fi
-
-COPY . .
+    poetry config virtualenvs.create true
+RUN if [ -f pyproject.toml ]; then poetry install --no-root; fi
 
 ENTRYPOINT ["poetry", "run", "uvicorn", "api.main:app", "--host", "0.0.0.0", "--reload"]

@@ -13,6 +13,6 @@
   
 # ブラウザからアクセス
  *フロントエンド*  
-  https://localhost:3000  
+  https://localhost:80  
  *バックエンド*  
   https://localhost:8000  

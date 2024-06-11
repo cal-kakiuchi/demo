@@ -6,21 +6,15 @@
 # init
  ``` bash
   #ビルド
-    docker compose build --no-cache
+  docker compose build --no-cache
+  #poetry install(初回起動時のみ)
+  docker compose run --entrypoint "poetry install --no-root" backend
   #ドッカー起動
-    docker compose up -d
+  docker compose up -d
  ```
-  
- # Nuxt起動
-  ``` bash
-  # npm install
-    docker compose run frontend npm install  
-  # フロントエンドフォルダ内で実行  
-    docker compose run frontend npm run dev  
-  ```
   
 # ブラウザからアクセス
  *フロントエンド*  
-  https://localhost:3000  
+  http://localhost/  
  *バックエンド*  
-  https://localhost:8000  
+  http://localhost:8000/  

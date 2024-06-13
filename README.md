@@ -1,4 +1,4 @@
-# 仕様技術
+# 使用技術
  -- Nuxt3.0(TypeScript)  
  -- FastAPI(python)  
  -- MYSQL  

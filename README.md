@@ -1,8 +1,10 @@
-# 仕様技術
+# 使用技術
  -- Nuxt3.0(TypeScript)  
- -- FastAPI(python)  
- -- MYSQL  
- -- DOCKER　*事前にDOCKERまたはRANCHERをインストールして起動
+  参考: https://nuxt.com/  
+ -- FastAPI(python3.8.19)  
+  参考: https://fastapi.tiangolo.com/ja/  
+ -- MYSQL8.4LTS  
+ -- DOCKER　*事前にDOCKERまたはRANCHERをインストールして起動しておくこと
 
 # init
  ``` bash
@@ -17,3 +19,5 @@
   http://localhost/  
  *バックエンド*  
   http://localhost:8000/  
+ *対話型APIドキュメント*  
+  http://localhost:8000/docs  

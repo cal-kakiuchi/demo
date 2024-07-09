@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3.9'
 
 services:
   db:
@@ -8,9 +8,10 @@ services:
     tty: true
     environment:
       MYSQL_DATABASE: kintai_db
-      MYSQL_USER: admin
+      MYSQL_USER: admins
       MYSQL_PASSWORD: password
-      MYSQL_ROOT_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_HOST: '%'
     ports:
     - "3306:3306"
     volumes:
@@ -32,10 +33,10 @@ services:
     - "8000:8000"
     tty: true
     init: true
-    # depends_on:
-    # - db
+    depends_on:
+    - db
     # environment:
-    #   DATABASE_URL: "mysql://root:your_password@db/kintai_db"
+    #   DATABASE_URL: "mysql://root:password@db/kintai_db"
     networks:
       - local-net
 
@@ -43,19 +44,20 @@ services:
     container_name: frontend
     build: ./frontend
     volumes:
-      - ./frontend:/app
-      - nuxt_node_modules:/app/node_modules
+      - ./frontend/src:/app
+    # volumes:
+    #   - ./frontend:/app
+    #   - nuxt_node_modules:/app/node_modules
     ports:
       - "80:3000"
-      - "24678:24678"
+      # - "24678:24678"
     tty: true
     environment:
       HOST: 0.0.0.0
       port: 80
       CHOKIDAR_USEPOLLING: true
-    command: sh -c "yarn && yarn dev"
-volumes:
-  nuxt_node_modules:
+      WATCHPACK_ROLLING: true
+    # command: sh -c "yarn && yarn dev"
 # コンテナ間で通信を行うためのネットワークブリッジ
 networks:
   local-net:

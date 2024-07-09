@@ -1,13 +1,10 @@
-FROM node:18-buster-slim
+FROM node:20.15-slim
 
-ENV TZ Asia/Tokyo
+ARG WORKDIR
+ARG API_URL
+
+ENV LANG=C.UTF-8 \
+    TZ=Asia/Tokyo
+    # API_URL=${API_URL}
 
 WORKDIR /app
-
-RUN apt update \
-    && apt install -y \
-    git \
-    vim
-RUN apt install -y nodejs npm
-# RUN npx nuxi init .--force
-# RUN npm install n -g

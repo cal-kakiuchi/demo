@@ -57,3 +57,12 @@ async def update_users(users: List[User]):
         user.name = new_user.name
         user.age = new_user.age
         db.commit()
+
+@app.delete("/user/{user_id}")
+async def delete_user(user_id: int):
+    db = SessionLocal()
+    user = db.query(UserTable).filter(UserTable.id == user_id).first()
+    del user
+    
+    return {"message": "Item deleted"}
+
